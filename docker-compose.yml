@@ -1,0 +1,14 @@
+version: "3"
+services:
+  smb:
+    container_name: smb
+    network_mode: host
+    image: smb4:latest
+    volumes:
+      - ${PWD}/smb.conf:/usr/local/samba/etc/smb.conf
+      - data:/share/data
+    restart: unless-stopped
+    build: .
+
+volumes:
+  data:

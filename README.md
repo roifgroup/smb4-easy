@@ -1,2 +1,7 @@
-# smb4-easy
-SMB4 aimed to provide easy and cost effective solution to running samba in a container both in ARM and AMD64 processors. This projects is fully tested in both environments
+# Execute
+`docker run --network host -d smb4`
+
+docker build --build-arg SMBVER=4.15.3 -t smb4 . 
+
+# TIPs
+1. If there is a change in requirements execute the "require.sh" script to gather the new requirements
