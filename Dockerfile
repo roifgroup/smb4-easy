@@ -19,7 +19,6 @@ COPY --from=0 /usr/local/samba /usr/local/samba
 EXPOSE 137/udp 138/udp 139 445
 
 COPY ./smb.conf /usr/local/samba/etc/smb.conf
-COPY ./smb.sh /smb.sh
-COPY ./set_user.sh /set_user.sh
+COPY ./smb.sh ./set_user.sh /
 RUN mkdir /var/log/samba && chmod +x /smb.sh /set_user.sh
 CMD /smb.sh
