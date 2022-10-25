@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:22.04
 ARG SMBVER=4.15.3
 RUN apt-get update && apt-get install -y -o Dpkg::Options::="--force-confold" wget && apt-get upgrade -y && apt-get clean && \
 rm -rf /var/lib/apt/lists/* /tmp/*
@@ -9,7 +9,7 @@ RUN chmod +x /tmp/requirements.sh && /tmp/requirements.sh && wget https://downlo
 COPY ./smb.conf /usr/local/samba/etc/smb.conf
 
 
-FROM ubuntu
+FROM ubuntu:22.04
 RUN apt-get update && apt-get upgrade -y && \
 DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata && \ 
 apt install -y libbsd0 libpopt0 libldap-2.4-2 libcap2 libicu66 libunwind8 libjansson4 libtracker-sparql-2.0-0 && apt-get clean && \
