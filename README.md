@@ -1,4 +1,4 @@
-# Intro
+# Intro (Project)
 This is a project built from source code since there seem to be old packages in the APT repo.
 This project aims to make upgrades easier to keep up with security patching and having consistency.
 
